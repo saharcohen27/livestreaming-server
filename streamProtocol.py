@@ -48,7 +48,6 @@ class RTMP:
         amf0.add(1) # The command specifies the transaction ID (always equal to 1 for the connect command)
 
         obj1 = {
-            # TODO understand what is that
             "fmsVer": "FMS/3,5,5,2004",
             "capabilities": 31.0,
             "mode": 1.0
@@ -88,7 +87,7 @@ class RTMP:
         }
         rtmp_body.add(obj)
         
-        header = RTMPHeader() # TODO try to delete that because it make no sense
+        header = RTMPHeader() 
         header.add_length(rtmp_body)
         header.add_type_id("command")
         header.add_stream_id(b'\x01\x00\x00\x00')
